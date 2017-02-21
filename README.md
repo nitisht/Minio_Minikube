@@ -5,7 +5,7 @@ Kubernetes running locally on your computer.
 
 ## Prerequisites
 
-[Minikube](https://github.com/kubernetes/minikube/blob/master/README.md#installation) and `[kubectl]`(https://kubernetes.io/docs/user-guide/prereqs/)
+[Minikube](https://github.com/kubernetes/minikube/blob/master/README.md#installation) and [`kubectl`](https://kubernetes.io/docs/user-guide/prereqs/)
 installed on your system.
 
 ## Steps
