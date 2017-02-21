@@ -5,13 +5,27 @@ Kubernetes running locally on your computer.
 
 ## Prerequisites
 
-[Minikube](https://github.com/kubernetes/minikube/blob/master/README.md#installation) and [kubectl](https://kubernetes.io/docs/user-guide/prereqs/)
+[Minikube](https://github.com/kubernetes/minikube/blob/master/README.md#installation) and `[kubectl]`(https://kubernetes.io/docs/user-guide/prereqs/)
 installed on your system.
 
 ## Steps
 
 * Download [minio_distributed.sh](minio_distributed.sh) and [statefulset.yaml](statefulset.yaml) files on your computer. 
 * For Linux/macOS execute the minio_distributed.sh script in command prompt. 
+* After the script is executed successfully, you should get an output like this
+
+```
+service "minio-public" created
+service "minio" created
+statefulset "minio" created
+```
+The service `minio-public` is a [clusterIP](https://kubernetes.io/docs/user-guide/services/#publishing-services---service-types) service. It exposes the service on a cluster-internal IP. To connect to your Minio instances via `kubectl port-forward` command, execute 
+
+```
+kubectl port-forward minio-0 9000:9000
+```
+
+Minio server can now be accessed at http:localhost:9000, with accessKey and secretKey as mentioned in the statefulset.yaml file. 
 
 ## Background
 
